@@ -57,3 +57,41 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+   
+message = TemplateSendMessage(
+    alt_text='旋轉木馬',
+    template=CarouselTemplate(
+        columns=[
+            CarouselColumn(
+                thumbnail_image_url='https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png',
+                title='我的身份是......',
+                text='副標題1',
+                actions=[
+                    URITemplateAction(
+                        label='連結點這邊',
+                        uri='URL連結放此'
+                    )
+                ]
+            ),
+            CarouselColumn(
+                thumbnail_image_url='https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png',
+                title='症狀緩解',
+                text='副標題2',
+                actions=[
+                    URITemplateAction(
+                        label='連結點這邊',
+                        uri='URL連結放此'
+                    )
+                ]
+            ),
+            CarouselColumn(
+                thumbnail_image_url='https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png',
+                title='查詢線上看診診所',
+                text='副標題',
+                actions=[
+                    URITemplateAction(
+                        label='連結點這邊',
+                        uri='URL連結放此'
+        ]
+    )
+)
