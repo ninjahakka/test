@@ -66,7 +66,7 @@ def handle_message(event):
                                 text= "個股資訊 " + message[3:]),
                             MessageAction( 
                                 label= message[3:] + " 個股新聞",
-                                text= "個股新聞 " + message[3:])
+                                text= "個股新聞 " + message[3:]),
                             MessageAction( 
                                 label= "不清楚",
                                 text= "個股新聞 " + message[3:])
