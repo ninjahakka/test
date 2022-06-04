@@ -71,7 +71,7 @@ def handle_message(event):
                                     text= "個股新聞 " + message[3:])
                             ]
                         ),
-                        CarouselColumn( 
+                CarouselColumn( 
                             thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
                             title = "症狀緩解", 
                             text ="點選症狀了解緩解方式", 
@@ -84,7 +84,7 @@ def handle_message(event):
                                     text= "日線圖 " + message[3:]),  
                             ]
                         ),
-                        CarouselColumn( 
+                CarouselColumn( 
                             thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
                             title = "查詢線上看診診所", 
                             text ="點選查詢線上看診診所", 
