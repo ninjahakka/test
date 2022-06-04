@@ -58,7 +58,7 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
    
-message = TemplateSendMessage(
+'''message = TemplateSendMessage(
     alt_text='旋轉木馬',
     template=CarouselTemplate(
         columns=[
@@ -94,4 +94,4 @@ message = TemplateSendMessage(
                         uri='URL連結放此'
         ]
     )
-)
+)'''
