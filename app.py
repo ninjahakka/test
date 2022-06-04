@@ -74,21 +74,22 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn( 
-                        thumbnail_image_url ="https://chenchenhouse.com//wp-content/uploads/2020/10/%E5%9C%96%E7%89%871-2.png",
-                        title = message[3:] + " 股票資訊", 
+                        thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
+                        title = "我的身分是...", 
                         text ="請點選想查詢的股票資訊", 
                         actions =[
                             MessageAction( 
-                                label= message[3:] + " 最新分鐘圖",
-                                text= "最新分鐘圖 " + message[3:]), 
+                                label= message[3:] + " 個股資訊",
+                                text= "個股資訊 " + message[3:]),
                             MessageAction( 
-                                label= message[3:] + " 日線圖",
-                                text= "日線圖 " + message[3:]),  
+                                label= message[3:] + " 個股新聞",
+                                text= "個股新聞 " + message[3:]),
                             MessageAction( 
-                                label= message[3:] + " 日線圖",
-                                text= "日線圖 " + message[3:]),
+                                label= "不清楚",
+                                text= "個股新聞 " + message[3:]),
+				
                         ]
-                    )
+                    ),
                 ]
             )
          )
