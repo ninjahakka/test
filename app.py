@@ -86,7 +86,7 @@ def handle_message(event):
                                 text= "BBBB"),
                             MessageAction( 
                                 label= "C",
-                                text= "CCCC"+message[3:]),
+                                text= "CCCC"),
 				
                         ]
                     ),
