@@ -47,59 +47,14 @@ def callback():
 
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
+import re
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    buttons_template_message = TemplateSendMessage(
-        alt_text = "股票資訊",
-        template=CarouselTemplate( 
-            columns=[ 
-                CarouselColumn( 
-                            thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                            title = "我的身份是...", 
-                            text ="點選身份了解因應措施", 
-                            actions =[
-                                MessageAction( 
-                                    label= "確診者",
-                                    text= "個股資訊 " + message[3:]),
-                                MessageAction( 
-                                    label= "密切接觸者",
-                                    text= "個股新聞 " + message[3:]),
-				MessageAction( 
-                                    label= "不清楚",
-                                    text= "個股新聞 " + message[3:]),
-                            ]
-                        ),
-                CarouselColumn( 
-                            thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                            title = "症狀緩解", 
-                            text ="點選症狀了解緩解方式", 
-                            actions =[
-                                MessageAction( 
-                                    label= "發燒",
-                                    text= "最新分鐘圖 " + message[3:]), 
-                                MessageAction( 
-                                    label= "喉嚨痛",
-                                    text= "日線圖 " + message[3:]),  
-                            ]
-                        ),
-                CarouselColumn( 
-                            thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                            title = "查詢線上看診診所", 
-                            text ="點選查詢線上看診診所", 
-                            actions =[
-                                MessageAction( 
-                                    label= message[3:] + " 平均股利",
-                                    text= "平均股利 " + message[3:]),
-                                MessageAction( 
-                                    label= message[3:] + " 歷年股利",
-                                    text= "歷年股利 " + message[3:])
-                            ]
-                        ),                               
-                    ]
-                ) 
-            )
-    line_bot_api.reply_message(event.reply_token, buttons_template_message)
+    message = event.message.text
+    if re.match("你是誰",message):
+        line_bot_api.reply_message(event.reply_token,TextSendMessage("才不告訴你勒~~"))
+    else:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
 	
     
 #主程式
