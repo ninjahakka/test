@@ -51,14 +51,14 @@ import re
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = event.message.text
-    if "股票 " in message:
+    if "旋轉木馬" in message:
         buttons_template_message = TemplateSendMessage(
-        alt_text = "股票資訊",
+        alt_text = "回報身分",
         template=CarouselTemplate( 
             columns=[ 
                     CarouselColumn( 
                         thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                        title = message + " 股票資訊", 
+                        title = "我的身分是...", 
                         text ="請點選想查詢的股票資訊", 
                         actions =[
                             MessageAction( 
@@ -66,6 +66,9 @@ def handle_message(event):
                                 text= "個股資訊 " + message[3:]),
                             MessageAction( 
                                 label= message[3:] + " 個股新聞",
+                                text= "個股新聞 " + message[3:])
+                            MessageAction( 
+                                label= "不清楚",
                                 text= "個股新聞 " + message[3:])
                         ]
                     )
