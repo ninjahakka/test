@@ -84,8 +84,11 @@ def handle_message(event):
                             MessageAction( 
                                 label= message[3:] + " 日線圖",
                                 text= "日線圖 " + message[3:]),  
+                            MessageAction( 
+                                label= message[3:] + " 日線圖",
+                                text= "日線圖 " + message[3:]),
                         ]
-                    ),
+                    )
                 ]
             )
          )
