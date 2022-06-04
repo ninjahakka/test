@@ -63,13 +63,13 @@ def handle_message(event):
                         actions =[
                             MessageAction( 
                                 label= "確診者",
-                                text= "確診者應該...",
+                                text= "確診者應該..."),
                             MessageAction( 
                                 label= "密切接觸者",
-                                text= "密切接觸者應該...",
+                                text= "密切接觸者應該..."),
                             MessageAction( 
                                 label= "不清楚",
-                                text= "OK",
+                                text= "OK"),
 				
                         ]
                     ),
@@ -80,7 +80,7 @@ def handle_message(event):
                         actions =[
                             MessageAction( 
                                 label= "A",
-                                text= "AAAA",
+                                text= "AAAA"),
                             MessageAction( 
                                 label= "B",
                                 text= "BBBB"),
