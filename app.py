@@ -53,40 +53,40 @@ def handle_message(event):
     message = event.message.text
     if "旋轉木馬" in message:
         buttons_template_message = TemplateSendMessage(
-        alt_text = "回報身分",
+        alt_text = "旋轉木馬",
         template=CarouselTemplate( 
             columns=[ 
                     CarouselColumn( 
                         thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
                         title = "我的身分是...", 
-                        text ="請點選想查詢的股票資訊", 
+                        text ="請點選符合的身分了解因應方式", 
                         actions =[
                             MessageAction( 
-                                label= message[3:] + " 個股資訊",
-                                text= "個股資訊 " + message[3:]),
+                                label= "確診者",
+                                text= "確診者應該...",
                             MessageAction( 
-                                label= message[3:] + " 個股新聞",
-                                text= "個股新聞 " + message[3:]),
+                                label= "密切接觸者",
+                                text= "密切接觸者應該...",
                             MessageAction( 
                                 label= "不清楚",
-                                text= "個股新聞 " + message[3:]),
+                                text= "OK",
 				
                         ]
                     ),
                     CarouselColumn( 
                         thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                        title = "我的身分是...", 
-                        text ="請點選想查詢的股票資訊", 
+                        title = "症狀緩解方式", 
+                        text ="請點選症狀了解緩解方式", 
                         actions =[
                             MessageAction( 
-                                label= message[3:] + " 個股資訊",
-                                text= "個股資訊 " + message[3:]),
+                                label= "A",
+                                text= "AAAA",
                             MessageAction( 
-                                label= message[3:] + " 個股新聞",
-                                text= "個股新聞 " + message[3:]),
+                                label= "B",
+                                text= "BBBB"),
                             MessageAction( 
-                                label= "不清楚",
-                                text= "個股新聞 " + message[3:]),
+                                label= "C",
+                                text= "CCCC"),
 				
                         ]
                     ),
