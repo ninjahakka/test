@@ -25,6 +25,8 @@ import tempfile, os
 import datetime
 import time
 #======python的函數庫==========
+import re
+from spider import crawler
 
 app = Flask(__name__)
  
@@ -57,10 +59,10 @@ def callback():
 
 #訊息傳遞區塊
 ##### 基本上程式編輯都在這個function #####
-import re
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    info_list = crawler()
     if "旋轉木馬" in msg:
         buttons_template_message = TemplateSendMessage(
         alt_text = "旋轉木馬",
@@ -200,6 +202,15 @@ def handle_message(event):
     elif '定安診所電話號碼' in msg:
         message = TextSendMessage(text='02-29323755')
         line_bot_api.reply_message(event.reply_token, message)
+	
+    elif re.match('今日確診人數', msg):  # 點下今日確診人數的按鈕
+        line_bot_api.reply_message(
+            event.reply_token, TextSendMessage(info_list[0]))
+        #print('Success:', info[0])
+    elif '通報' in msg:  # 輸入通報兩個字
+        line_bot_api.reply_message(
+            event.reply_token, TextSendMessage(info_list[1]))
+	
     else:
         message = TextSendMessage(text='講這個我聽不懂啦！\n請你點選單才能叫出功能呦～')
         line_bot_api.reply_message(event.reply_token, message)
