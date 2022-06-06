@@ -60,8 +60,8 @@ def callback():
 import re
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = event.message.text
-    if "旋轉木馬" in message:
+    msg = event.message.text
+    if "旋轉木馬" in msg:
         buttons_template_message = TemplateSendMessage(
         alt_text = "旋轉木馬",
         template=CarouselTemplate( 
@@ -104,7 +104,7 @@ def handle_message(event):
             )
          )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    elif "防疫23" in message:
+    elif "防疫23" in msg:
         buttons_template_message = TemplateSendMessage(
         alt_text = "防疫攻略",
         template=CarouselTemplate( 
@@ -148,7 +148,6 @@ def handle_message(event):
          )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
 	
-    msg = event.message.text
 
     elif '我是確診者' in msg:
         message = Confirm_Template()
