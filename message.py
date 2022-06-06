@@ -78,5 +78,72 @@ def Carousel_Template():
     )
     return message
 
+def Carousel_Template_1():
+    message = TemplateSendMessage(
+        alt_text='線上看診',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url='https://static.iyp.tw/27056/products/photooriginal-1637002-YWd2r.jpg?57390',
+                    title='世誠耳鼻喉科診所',
+                    text='臺北市文山區忠順街1段107號1樓',
+                    actions=[
+                        MessageTemplateAction(
+                            label='世誠診所線上預約看診流程',
+                            text='世誠診所線上預約看診流程'
+                        ),
+                        MessageTemplateAction(
+                            label='世誠診所電話號碼',
+                            text='世誠診所電話號碼'
+                        ),
+                        URITemplateAction(
+                            label='世誠診所官方帳號',
+                            uri='https://lin.ee/NbxAK3L'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://scontent.ftpe8-4.fna.fbcdn.net/v/t1.6435-9/78277530_143442760401038_8007473048829558784_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iCIYz5lOdqkAX94ZGC3&tn=pRW8_k2nrQQ3jI7P&_nc_ht=scontent.ftpe8-4.fna&oh=00_AT9FySGmomqBaC-onUEwO9-RfoEllVMQBtWNqiheYPt5hA&oe=62C2FF47',
+                    title='洪佑承小兒科專科診所',
+                    text='臺北市文山區興隆路4段64之2號',
+                    actions=[
+                        MessageTemplateAction(
+                            label='洪佑承診所線上預約看診流程',
+                            text='洪佑承診所線上預約看診流程'
+                        ),
+                        MessageTemplateAction(
+                            label='洪佑承診所電話號碼',
+                            text='洪佑承診所電話號碼'
+                        ),
+                        URITemplateAction(
+                            label='洪佑承診所官方帳號',
+                            uri='https://lin.ee/sfyBi98'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://lh5.googleusercontent.com/-fG_0hYFwwvk/VyTA3crkKgI/AAAAAAAAA50/B_IrZymW8A4b_Tu0_BI-P_c4N6bHYBybgCJkC/s1600-w400/',
+                    title='定安診所',
+                    text='臺北市文山區景興路165號',
+                    actions=[
+                        MessageTemplateAction(
+                            label='定安診所線上預約看診流程',
+                            text='定安診所線上預約看診流程'
+                        ),
+                        MessageTemplateAction(
+                            label='定安診所電話號碼',
+                            text='定安診所電話號碼'
+                        ),
+                        URITemplateAction(
+                            label='定安診所官方帳號',
+                            uri='https://page.line.me/wxv0899w?openQrModal=true'
+                        )
+                    ]
+                )
+            ]
+        )
+    )
+    return message
+
 
 #關於LINEBOT聊天內容範例
