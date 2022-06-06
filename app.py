@@ -137,8 +137,7 @@ def handle_message(event):
                             uri='https://www.nccu.edu.tw/var/file/0/1000/img/12/0511FINAL_NEW.pdf'
                         )
                     ]
-                
-                )
+                ),
             ]
         )
     )
