@@ -13,3 +13,8 @@ oauth2client
 pyimgur
 mpl_finance
 arrow
+bs4 
+pymongo 
+SnowNLP 
+emoji 
+pyshorteners 
