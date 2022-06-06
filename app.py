@@ -117,7 +117,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn( 
-                        thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
+                        thumbnail_image_url ="https://www.nccu.edu.tw/var/file/0/1000/img/12/1651482462275s.jpg",
                         title = "症狀緩解方式", 
                         text ="請點選症狀了解緩解方式", 
                         actions =[
