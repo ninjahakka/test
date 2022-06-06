@@ -140,7 +140,7 @@ def handle_message(event):
 	
     msg = event.message.text
 
-    if '我是確診者' in msg:
+    elif '我是確診者' in msg:
         message = Confirm_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '防疫攻略' in msg:
