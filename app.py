@@ -179,6 +179,27 @@ def handle_message(event):
     elif '哈' in msg:
         message = StickerSendMessage(package_id=1,sticker_id=1)
         line_bot_api.reply_message(event.reply_token, message)
+    elif '線上看診' in msg:
+        message = Carousel_Template_1()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '世誠診所線上預約看診流程' in msg:
+        message = TextSendMessage(text='1.加入世誠診所官方帳號\n2.在對話欄寫上看診需求\n a.已 PCR 確診(日期)，想看診開藥\n b.剛快篩陽性，想確認並上傳疾管局及看診開藥\n3.初診者，可先提供健保卡及聯絡電話，加快掛號速度。')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '世誠診所電話號碼' in msg:
+        message = TextSendMessage(text='02-22343618')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '洪佑承診所線上預約看診流程' in msg:
+        message = TextSendMessage(text='視訊門診前，可以先LINE先行知會，拍健保卡，說明初診，方便掛號。\n視訊看診時間為每週四五六的上午9:00-11:30及下午15:00-21:00')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '洪佑承診所電話號碼' in msg:
+        message = TextSendMessage(text='02-29364708')
+        line_bot_api.reply_message(event.reply_token, message)  
+    elif '定安診所線上預約看診流程' in msg:
+        message = TextSendMessage(text='1.於 LINE 線上諮詢，安排看診時間。\n2.醫師於約定時間致電\n3.使用 LINE 視訊看診\n4.請親友攜帶健保卡來繳費領藥')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '定安診所電話號碼' in msg:
+        message = TextSendMessage(text='02-29323755')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='講這個我聽不懂啦！\n請你點選單才能叫出功能呦～')
         line_bot_api.reply_message(event.reply_token, message)
