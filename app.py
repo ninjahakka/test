@@ -202,7 +202,6 @@ def handle_message(event):
     elif '定安診所電話號碼' in msg:
         message = TextSendMessage(text='02-29323755')
         line_bot_api.reply_message(event.reply_token, message)
-	
     elif re.match('今日確診人數', msg):  # 點下今日確診人數的按鈕
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(info_list[0]))
@@ -210,7 +209,6 @@ def handle_message(event):
     elif '通報' in msg:  # 輸入通報兩個字
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(info_list[1]))
-	
     else:
         message = TextSendMessage(text='講這個我聽不懂啦！\n請你點選單才能叫出功能呦～')
         line_bot_api.reply_message(event.reply_token, message)
