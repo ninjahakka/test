@@ -104,15 +104,15 @@ def handle_message(event):
                     title='你的身份是？',
                     text='輸入你的身分即可獲得防疫攻略！',
                     actions=[
-                        MessageTemplateAction(
+                        MessageAction(
                             label='我是確診者',
                             text='我是確診者'
                         ),
-                        MessageTemplateAction(
+                        MessageAction(
                             label='我是密切接觸者',
                             text='我是密切接觸者'
                         ),
-                        MessageTemplateAction(
+                        MessageAction(
                             label='我是自我應變者',
                             text='我是自我應變者'
                         
@@ -124,15 +124,15 @@ def handle_message(event):
                     title='你的身份是？',
                     text='輸入你的身分即可獲得防疫攻略！',
                     actions=[
-                        MessageTemplateAction(
+                        MessageAction(
                             label='我是自主健康管理者',
                             text='我是自主健康管理者'
                         ),
-                        MessageTemplateAction(
+                        MessageAction(
                             label='不確定定義',
                             text='不確定定義'
                         ),
-                        URITemplateAction(
+                        URIAction(
                             label='還不夠清楚？',
                             uri='https://www.nccu.edu.tw/var/file/0/1000/img/12/0511FINAL_NEW.pdf'
                         )
