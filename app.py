@@ -94,7 +94,7 @@ def handle_message(event):
             )
          )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    elif "防疫攻略" in message:
+    elif "防疫攻略23" in message:
         buttons_template_message = TemplateSendMessage(
         alt_text = "防疫攻略",
         template=CarouselTemplate( 
@@ -137,8 +137,42 @@ def handle_message(event):
             )
          )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
+	
+    msg = event.message.text
+
+    if '我是確診者' in msg:
+        message = Confirm_Template()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '防疫攻略' in msg:
+        message = Carousel_Template()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '功能列表' in msg:
+        message = function_list()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '我是學生啦' in msg:
+        message = TextSendMessage(text='1️⃣自主回報在校密切接觸者\n學校將聯絡衛生局開立居家隔離單\n☎️ 回報專線：02-29393091 \n\n（平日/上班時間）\n身健中心分機：77424 or 77425 \n（假日/非上班時間）\n學安中心分機：66119 or 0919099119 \n\n2️⃣ 請進行居家照護7天＋自主健康管理7天\n（自主健康管理期間做好個人防護可入校）\n3⃣️ 至台灣社交距離APP回報足跡')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '我是教職員啦' in msg:
+        message = TextSendMessage(text='1. 自主回報在校密切接觸者\n學校將聯絡衛生局開立居家隔離單\n☎️ 回報專線：02-29393091\n\n（平日/上班時間）\n環安組分機：62823 \n（假日/非上班時間）\n學安中心分機：66119 or 0919099119\n\n2️⃣ 請進行居家照護7天＋自主健康管理7天\n（自主健康管理期間做好個人防護可入校）\n3⃣️ 至台灣社交距離APP回報足跡')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '我是密切接觸者' in msg:
+        message = TextSendMessage(text='您有以下選擇：\n 1️⃣ 居家隔離3天＋自主防疫4天（不可入校、在宿舍不可外出）\n 2️⃣  如果您是疫苗打滿三劑且快篩陰性者 可直接自主防疫七天（不可入校、在宿舍不可外出）')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '我是自我應變者' in msg:
+        message = TextSendMessage(text='請自主監測3天 期間內不可入校，暫停實體上課、上班')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '我是自主健康管理者' in msg:
+        message = TextSendMessage(text='1️⃣  如果無任何症狀可正常生活，但外出請佩戴醫用口罩 \n2️⃣ 避免出入無法保持社交距離，或容易近距離接觸不特定人之場所 \n3⃣️ 禁止與他人進行近距離或群聚行之活動（例如：聚餐、聚會、公眾集會等）\n4⃣️ 禁止前往醫院陪病，亦應延後非急迫性需求之醫療或檢查')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '不確定定義' in msg:
+        message = TextSendMessage(text='1️⃣ 確診者：PCR陽性 or 經醫師視訊評估快篩陽性 \n2️⃣ 密切接觸者：確診者的同住親友 or 同寢室友\n3⃣️ 自主應變者：與確診者前2日有任一方摘下口罩進行15分鐘以上接觸 \n4⃣️ 自主健康管理者：確診者進行居家照護7日後的7日為自主健康管理期間')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '哈' in msg:
+        message = StickerSendMessage(package_id=1,sticker_id=1)
+        line_bot_api.reply_message(event.reply_token, message)
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+        message = TextSendMessage(text='講這個我聽不懂啦！\n請你點選單才能叫出功能呦～')
+        line_bot_api.reply_message(event.reply_token, message)
 	
     
 #主程式
