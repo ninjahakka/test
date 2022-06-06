@@ -94,6 +94,49 @@ def handle_message(event):
             )
          )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
+    elif "防疫攻略" in message:
+        buttons_template_message = TemplateSendMessage(
+        alt_text = "防疫攻略",
+        template=CarouselTemplate( 
+            columns=[ 
+                    CarouselColumn( 
+                        thumbnail_image_url ="https://www.nccu.edu.tw/var/file/0/1000/img/12/1651482462275s.jpg",
+                        title = "我的身分是...", 
+                        text ="請點選符合的身分了解因應方式", 
+                        actions =[
+                            MessageAction( 
+                                label= "確診者",
+                                text= "確診者應該..."),
+                            MessageAction( 
+                                label= "密切接觸者",
+                                text= "密切接觸者應該..."),
+                            MessageAction( 
+                                label= "不清楚",
+                                text= "OK"),
+				
+                        ]
+                    ),
+                    CarouselColumn( 
+                        thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
+                        title = "症狀緩解方式", 
+                        text ="請點選症狀了解緩解方式", 
+                        actions =[
+                            MessageAction( 
+                                label= "A",
+                                text= "AAAA"),
+                            MessageAction( 
+                                label= "B",
+                                text= "BBBB"),
+                            MessageAction( 
+                                label= "C",
+                                text= "CCCC"),
+				
+                        ]
+                    ),
+                ]
+            )
+         )
+        line_bot_api.reply_message(event.reply_token, buttons_template_message)
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 	
