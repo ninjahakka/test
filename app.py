@@ -16,6 +16,16 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
+#======這裡是呼叫的檔案內容=====
+from message import *
+#======這裡是呼叫的檔案內容=====
+
+#======python的函數庫==========
+import tempfile, os
+import datetime
+import time
+#======python的函數庫==========
+
 app = Flask(__name__)
  
 # 必須放上自己的Channel Access Token
@@ -94,7 +104,7 @@ def handle_message(event):
             )
          )
         line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    elif "防疫攻略23" in message:
+    elif "防疫23" in message:
         buttons_template_message = TemplateSendMessage(
         alt_text = "防疫攻略",
         template=CarouselTemplate( 
