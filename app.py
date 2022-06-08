@@ -107,7 +107,7 @@ def handle_message(event):
         message = TextSendMessage(text='02-29364708')
         line_bot_api.reply_message(event.reply_token, message)  
     elif '定安診所線上預約看診流程' in msg:
-        message = TextSendMessage(text='1️⃣ 於 LINE 線上諮詢，安排看診時間。\n2️⃣ 醫師於約定時間致電\n3⃣️ 使用 LINE 視訊看診\n4.請親友攜帶健保卡來繳費領藥')
+        message = TextSendMessage(text='1️⃣ 於 LINE 線上諮詢，安排看診時間。\n2️⃣ 醫師於約定時間致電\n3⃣️ 使用 LINE 視訊看診\n4⃣️ 請親友攜帶健保卡來繳費領藥')
         line_bot_api.reply_message(event.reply_token, message)
     elif '定安診所電話號碼' in msg:
         message = TextSendMessage(text='02-29323755')
