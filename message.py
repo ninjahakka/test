@@ -30,7 +30,7 @@ def Confirm_Template():
 
 def Carousel_Template():
     message = TemplateSendMessage(
-        alt_text='一則旋轉木馬按鈕訊息',
+        alt_text='防疫攻略',
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
@@ -153,7 +153,7 @@ def Carousel_Template_2():
                 CarouselColumn(
                     thumbnail_image_url='https://i.imgur.com/LPgAcMW.jpg',
                     title='你的症狀',
-                    text='請點選你的症狀',
+                    text='點選你的症狀獲得舒緩方式！',
                     actions=[
                         MessageTemplateAction(
                             label='喉嚨沙啞',
@@ -168,7 +168,7 @@ def Carousel_Template_2():
                 CarouselColumn(
                     thumbnail_image_url='https://img.onl/n0XYqZ',
                     title='你的症狀',
-                    text='請點選你的症狀',
+                    text='點選你的症狀獲得舒緩方式！',
                     actions=[
                         MessageTemplateAction(
                             label='肌肉痠痛',
