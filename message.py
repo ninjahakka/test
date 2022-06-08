@@ -145,7 +145,7 @@ def Carousel_Template_1():
     )
     return message
 
-def Carousel_Template_():
+def Carousel_Template_2():
     message = TemplateSendMessage(
         alt_text='症狀舒緩',
         template=CarouselTemplate(
