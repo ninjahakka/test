@@ -112,7 +112,7 @@ def handle_message(event):
     elif '定安診所電話號碼' in msg:
         message = TextSendMessage(text='02-29323755')
         line_bot_api.reply_message(event.reply_token, message)
-    elif '政大今日確診人數' in msg:
+    elif '今日政大確診人數' in msg:
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(info_list[0]))
         #print('Success:', info[0])
