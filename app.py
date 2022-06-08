@@ -36,7 +36,7 @@ line_bot_api = LineBotApi('gLV0oCQgizV2XRMPDBARn0K5g0P4oMh1FA1qcdYq2XyISLkAaDEeO
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('254fba9cca783bc9c96dff144ef5bd4a')
 
-line_bot_api.push_message('Ud5516708abb79e53d540e3a9d15e1a0a', TextSendMessage(text='你可以開始了'))
+'''line_bot_api.push_message('Ud5516708abb79e53d540e3a9d15e1a0a', TextSendMessage(text='你可以開始了'))'''
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -209,6 +209,21 @@ def handle_message(event):
     elif '通報' in msg:  # 輸入通報兩個字
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(info_list[1]))
+    elif '症狀緩解方法' in msg:
+        message = Confirm_Template_2()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '喉嚨沙啞' in msg:
+        message = TextSendMessage(text='建議您可以食用下列食品，來紓緩喉嚨沙啞的症狀喔！\n1.蜂蜜水\n2.喝水\n3.喉嚨噴劑\n4.含喉片\n5.清冠一號')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '極度疲勞' in msg:
+        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓緩極度疲勞的症狀喔！\n1.充足的睡眠和休息，提升自身免疫力。\n2.維生素A以及維生素D以強化黏膜健康，幫助提升免疫功能。\n3.喝電解水。')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '肌肉痠痛' in msg:
+        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓緩極度疲勞的症狀喔！\n1.自我恢復：用靜態伸展減輕痠痛。\n2.按摩：讓酸痛部位得到直接的舒緩。')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '發燒頭痛' in msg:
+        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓解發燒的症狀喔！/n1.喝微溫的開水\n2.服用普拿疼\n3.貼退熱片\n4.溫毛巾擦拭')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='講這個我聽不懂啦！\n請你點選單才能叫出功能呦～')
         line_bot_api.reply_message(event.reply_token, message)
