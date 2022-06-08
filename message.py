@@ -167,10 +167,10 @@ def Carousel_Template_2():
                             label='肌肉痠痛',
                             text='肌肉痠痛'
                         ),
-                        MessageTemplateAction(
+                        '''MessageTemplateAction(
                             label='發燒頭痛',
                             text='發燒頭痛'
-                        )
+                        )'''
                     ]
                 )
             ]
