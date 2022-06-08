@@ -209,7 +209,7 @@ def handle_message(event):
     elif '通報' in msg:  # 輸入通報兩個字
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(info_list[1]))
-    elif '症狀緩解方法' in msg:
+    elif '症狀緩解' in msg:
         message = Carousel_Template_2() #原本誤植為Confirm_Template
         line_bot_api.reply_message(event.reply_token, message)
     elif '喉嚨沙啞' in msg:
