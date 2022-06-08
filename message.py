@@ -145,7 +145,7 @@ def Carousel_Template_1():
     )
     return message
 
-def Carousel_Template_2():
+def Carousel_Template_():
     message = TemplateSendMessage(
         alt_text='症狀舒緩',
         template=CarouselTemplate(
@@ -162,15 +162,22 @@ def Carousel_Template_2():
                         MessageTemplateAction(
                             label='極度疲勞',
                             text='極度疲勞'
-                        ),
+                        )
+                    ]
+                )
+                CarouselColumn(
+                    thumbnail_image_url='https://img.onl/n0XYqZ',
+                    title='你的症狀',
+                    text='請點選你的症狀',
+                    actions=[
                         MessageTemplateAction(
                             label='肌肉痠痛',
                             text='肌肉痠痛'
                         ),
-                        '''MessageTemplateAction(
+                        MessageTemplateAction(
                             label='發燒頭痛',
                             text='發燒頭痛'
-                        )'''
+                        )
                     ]
                 )
             ]
