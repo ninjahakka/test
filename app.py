@@ -31,12 +31,10 @@ from spider import crawler
 app = Flask(__name__)
  
 # 必須放上自己的Channel Access Token
-line_bot_api = LineBotApi('gLV0oCQgizV2XRMPDBARn0K5g0P4oMh1FA1qcdYq2XyISLkAaDEeOuEwOUxtLISlIn/5frMaI7NFcKFTNn61N9PB72P0Vc30eaFikUer24mFkb3ucnaMQmFBNvNk6nQvDJ4MbeezPOuht8kdt6pdoQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('NVA8b6jsubntv8W2N9htB5ehD/o3i8mCYSo064V6dy4jQayt2PjW1OTrgI9U3iiVEIrHllOOB+ijah/SiBmxefHquaQcwnJFooCGneE/GDG+I9GJYzunzAoeG4T0FMVg3KQ9D2r+JiA6jSJabNSFdgdB04t89/1O/w1cDnyilFU=')
  
 # 必須放上自己的Channel Secret
-handler = WebhookHandler('254fba9cca783bc9c96dff144ef5bd4a')
-
-'''line_bot_api.push_message('Ud5516708abb79e53d540e3a9d15e1a0a', TextSendMessage(text='你可以開始了'))'''
+handler = WebhookHandler('b8cc6f8d42de0c27fb007e12eba363f7')
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -63,95 +61,7 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     info_list = crawler()
-    if "旋轉木馬" in msg:
-        buttons_template_message = TemplateSendMessage(
-        alt_text = "旋轉木馬",
-        template=CarouselTemplate( 
-            columns=[ 
-                    CarouselColumn( 
-                        thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                        title = "我的身分是...", 
-                        text ="請點選符合的身分了解因應方式", 
-                        actions =[
-                            MessageAction( 
-                                label= "確診者",
-                                text= "確診者應該..."),
-                            MessageAction( 
-                                label= "密切接觸者",
-                                text= "密切接觸者應該..."),
-                            MessageAction( 
-                                label= "不清楚",
-                                text= "OK"),
-				
-                        ]
-                    ),
-                    CarouselColumn( 
-                        thumbnail_image_url ="https://upload.wikimedia.org/wikipedia/zh/thumb/3/33/National_Chengchi_University_logo.svg/1200px-National_Chengchi_University_logo.svg.png",
-                        title = "症狀緩解方式", 
-                        text ="請點選症狀了解緩解方式", 
-                        actions =[
-                            MessageAction( 
-                                label= "A",
-                                text= "AAAA"),
-                            MessageAction( 
-                                label= "B",
-                                text= "BBBB"),
-                            MessageAction( 
-                                label= "C",
-                                text= "CCCC"),
-				
-                        ]
-                    ),
-                ]
-            )
-         )
-        line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    elif "防疫23" in msg:
-        buttons_template_message = TemplateSendMessage(
-        alt_text = "防疫攻略",
-        template=CarouselTemplate( 
-            columns=[ 
-                    CarouselColumn( 
-                        thumbnail_image_url ="https://www.nccu.edu.tw/var/file/0/1000/img/12/1651482462275s.jpg",
-                        title = "我的身分是...", 
-                        text ="請點選符合的身分了解因應方式", 
-                        actions =[
-                            MessageAction( 
-                                label= "確診者",
-                                text= "確診者應該..."),
-                            MessageAction( 
-                                label= "密切接觸者",
-                                text= "密切接觸者應該..."),
-                            MessageAction( 
-                                label= "不清楚",
-                                text= "OK"),
-				
-                        ]
-                    ),
-                    CarouselColumn( 
-                        thumbnail_image_url ="https://www.nccu.edu.tw/var/file/0/1000/img/12/1651482462275s.jpg",
-                        title = "症狀緩解方式", 
-                        text ="請點選症狀了解緩解方式", 
-                        actions =[
-                            MessageAction( 
-                                label= "A",
-                                text= "AAAA"),
-                            MessageAction( 
-                                label= "B",
-                                text= "BBBB"),
-                            MessageAction( 
-                                label= "C",
-                                text= "CCCC"),
-				
-                        ]
-                    ),
-                ]
-            )
-         )
-        line_bot_api.reply_message(event.reply_token, buttons_template_message)
-	
-
-    elif '我是確診者' in msg:
+    if '我是確診者' in msg:
         message = Confirm_Template()
         line_bot_api.reply_message(event.reply_token, message)
     elif '防疫攻略' in msg:
