@@ -164,7 +164,7 @@ def Carousel_Template_2():
                             text='極度疲勞'
                         )
                     ]
-                )
+                ),
                 CarouselColumn(
                     thumbnail_image_url='https://img.onl/n0XYqZ',
                     title='你的症狀',
