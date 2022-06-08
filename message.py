@@ -151,7 +151,7 @@ def Carousel_Template_2():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://img.onl/n0XYqZ',
+                    thumbnail_image_url='https://i.imgur.com/LPgAcMW.jpg',
                     title='你的症狀',
                     text='請點選你的症狀',
                     actions=[
