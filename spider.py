@@ -12,7 +12,7 @@ def crawler():
     # print(case_num)
 
     case = case_num[0].text.lstrip()  # 去掉頭尾空格
-    case = case.rstrip('\n')
+    case = case.replace('\n', '')  
     case = case.rstrip('\t')  # 去掉結尾的tab和換行
     info.append(case)
     # print(case)  # 確診數
