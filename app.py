@@ -222,7 +222,7 @@ def handle_message(event):
         message = TextSendMessage(text='建議您可以嘗試以下方式，來紓緩極度疲勞的症狀喔！\n1.自我恢復：用靜態伸展減輕痠痛。\n2.按摩：讓酸痛部位得到直接的舒緩。')
         line_bot_api.reply_message(event.reply_token, message)
     elif '發燒頭痛' in msg:
-        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓解發燒的症狀喔！/n1.喝微溫的開水\n2.服用普拿疼\n3.貼退熱片\n4.溫毛巾擦拭')
+        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓解發燒的症狀喔！\n1.喝微溫的開水\n2.服用普拿疼\n3.貼退熱片\n4.溫毛巾擦拭')
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='講這個我聽不懂啦！\n請你點選單才能叫出功能呦～')
