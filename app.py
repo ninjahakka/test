@@ -120,7 +120,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(info_list[1]))
     elif '症狀緩解' in msg:
-        message = Carousel_Template_2() #原本誤植為Confirm_Template
+        message = Carousel_Template_2()
         line_bot_api.reply_message(event.reply_token, message)
     elif '喉嚨沙啞' in msg:
         message = TextSendMessage(text='建議您可以食用下列食品，來紓緩喉嚨沙啞的症狀喔！\n1️⃣ 蜂蜜水\n2️⃣ 喝水\n3️⃣ 喉嚨噴劑\n4️⃣ 含喉片\n5️⃣ 清冠一號')
