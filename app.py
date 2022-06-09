@@ -129,7 +129,7 @@ def handle_message(event):
         message = TextSendMessage(text='建議您可以嘗試以下方式，來紓緩極度疲勞的症狀喔！\n1️⃣ 充足的睡眠和休息，提升自身免疫力。\n2️⃣ 維生素A以及維生素D以強化黏膜健康，幫助提升免疫功能。\n3️⃣ 喝電解水。')
         line_bot_api.reply_message(event.reply_token, message)
     elif '肌肉痠痛' in msg:
-        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓緩極度疲勞的症狀喔！\n1️⃣ 自我恢復：用靜態伸展減輕痠痛。\n2️⃣ 按摩：讓酸痛部位得到直接的舒緩。')
+        message = TextSendMessage(text='建議您可以嘗試以下方式，來紓緩肌肉痠痛的症狀喔！\n1️⃣ 自我恢復：用靜態伸展減輕痠痛。\n2️⃣ 按摩：讓酸痛部位得到直接的舒緩。')
         line_bot_api.reply_message(event.reply_token, message)
     elif '發燒頭痛' in msg:
         message = TextSendMessage(text='建議您可以嘗試以下方式，來紓解發燒的症狀喔！\n1️⃣ 喝微溫的開水\n2️⃣ 服用普拿疼\n3️⃣ 貼退熱片\n4️⃣ 溫毛巾擦拭')
